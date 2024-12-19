@@ -1,0 +1,32 @@
+<!--- walkthrough9c.html
+
+ Practice JSON
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // let's define a JSON string
+        // artWork
+        // name = "Van Gogh"
+        // age = 100
+        //type = "painting"
+        const artWorkString = '{"name": "Van Gogh", "age": 100, "type": "painting"}';
+        console.log("artWorkString, the JSON string is: " + artWorkString);
+
+        //we imagine that artWorkString came from a different API/Web server
+        const artWorkJSONbj = JSON.parse(artWorkString);
+        console.log("artWorkJSONbj, the JSON Object is: " + artWorkJSONbj);
+        console.log(artWorkJSONbj.age);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

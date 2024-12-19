@@ -1,0 +1,50 @@
+<!--walkthrough7c.html
+Practice with a nested function ie. the concept of a closure
+----------------
+a closer is the concept of __inner function__  being able to access the
+ __variables__ and the __parameters__ of a __outer function__
+
+ Legend:
+ - variables
+ - parameters
+ - outer function
+ - inner function
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //define an anonymous function inner: calculateTax()
+        //define a regular function outer calculateCost() function
+        //Outer Function
+
+        function calculateCost(){
+            //THIS IS NOT A CALLBACK FUNCTION
+            //THIS IS NOT A RECURSIVE
+            //inner function (the nested function)
+            const calculateTax = function  (){
+                console.log("welcome to walkthrough7c");
+            }
+            calculateTax();
+        }
+        //this function returns void (undefined)
+
+        //call the function calculateCost
+        //the line below will give an error in some systems, because there is no point
+        //of returning undefined, and then saving undefined into a variable
+        let returnVal = calculateCost(); //not good practice. not necessary.
+        console.log("the calculateCost function returns: " + returnVal);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

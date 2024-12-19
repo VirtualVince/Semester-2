@@ -1,0 +1,27 @@
+namespace BonusCalProgram;
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        string inValue; //declare 
+        Console.WriteLine("please enter your amount of sell this year:");
+        inValue = Console.ReadLine(); 
+
+        int salesForYear;
+        //salesForYear = int.Parse(inValue);  
+        salesForYear = Convert.ToInt32(inValue);
+
+        // Console.WriteLine("===============================");
+        // Console.WriteLine($"the value you entered is {salesForYear}");
+
+        int bonusAmount; 
+        bonusAmount = 0; 
+
+        if (salesForYear >= 500000) {
+            bonusAmount = 1000;
+        }
+
+        Console.WriteLine($"your bonus is {bonusAmount}");
+
+    }
+}

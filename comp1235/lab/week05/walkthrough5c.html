@@ -1,0 +1,34 @@
+<!---walkthrough5c.html
+practice defining and calling new functions
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lab 5 - Walkthrough c</title>
+  <script>
+    //define a function called getFirstName prints and returns the first name from the full name
+    function getFirstName(username_p){
+      let firstname = username_p.substring(0, username_p.indexOf("."));
+      console.log(firstname);
+      //if there is no return keyword used, what is returned?:void (which is undefined when printed out)
+      return firstname;
+    }
+
+    let username = "peter.griffin";
+    let username2 = "lois.lane";
+
+    //call the function that we just defined with arguments
+    //save the value return from the function into a variable in the main execution
+    let firstname_m = getFirstName(username2);
+    console.log ("the first name is: " + firstname_m);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

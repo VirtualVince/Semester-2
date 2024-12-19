@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mark Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        #result span {
+            font-weight: bold;
+        }
+
+        #printChart {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Student Mark Calculator</h1>
+
+<form id="studentForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" required>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" required pattern="\(\d{3}\)\d{3}-\d{4}" title="Please enter a valid phone number (e.g., (123)456-7890)">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address">
+
+    <label for="mark">Mark:</label>
+    <input type="number" id="mark" min="0" max="100" required>
+
+    <button type="button" onclick="addStudent()">Add Student</button>
+</form>
+<p></p>
+<button onclick="printStudentList()">Print List</button>
+
+<div id="result">
+    <h2>Student List</h2>
+    <ul id="studentList"></ul>
+    <p>Average Mark: <span id="averageMark"></span></p>
+</div>
+
+<div id="printChart">
+    <h2>Printable Student List</h2>
+    <ul id="printableList"></ul>
+</div>
+
+<script>
+    // Array to store student objects
+    var students = [];
+
+    function addStudent() {
+        // Get values from form
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var phone = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        var mark = parseInt(document.getElementById("mark").value);
+
+        // Validate phone number and email
+        var phonePattern = /\(\d{3}\)\d{3}-\d{4}/;
+        var emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
+
+        if (!phonePattern.test(phone)) {
+            alert("Please enter a valid phone number (e.g., (123)456-7890)");
+            return;
+        }
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address");
+            return;
+        }
+
+        // Create student object
+        var student = {
+            firstName: firstName,
+            lastName: lastName,
+            phone: phone,
+            email: email,
+            mark: mark
+        };
+
+        // Add student to array
+        students.push(student);
+
+        // Update student list
+       // updateStudentList();
+
+        // Calculate average mark
+        var totalMarks = 0;
+        for (var i = 0; i < students.length; i++) {
+            totalMarks += students[i].mark;
+        }
+        var averageMark = totalMarks / students.length;
+
+        // Display average mark
+        document.getElementById("averageMark").textContent = averageMark.toFixed(2);
+    }
+
+ //   function updateStudentList() {
+ //       // Update the student list in the HTML
+ //       var studentListElement = document.getElementById("studentList");
+ //       studentListElement.innerHTML = ""; // Clear existing list
+
+ //       for (var i = 0; i < students.length; i++) {
+ //           var listItem = document.createElement("li");
+  //          listItem.textContent = students[i].firstName + " " + students[i].lastName + " - Mark: " + students[i].mark;
+  //          studentListElement.appendChild(listItem);
+  //      }
+ //   }
+
+    function printStudentList() {
+        // Update the printable list in the HTML
+        var printableListElement = document.getElementById("printableList");
+        printableListElement.innerHTML = ""; // Clear existing list
+
+        for (var i = 0; i < students.length; i++) {
+            var listItem = document.createElement("li");
+            listItem.textContent = students[i].firstName + " " + students[i].lastName + " - Mark: " + students[i].mark;
+            printableListElement.appendChild(listItem);
+        }
+
+        // Show the printable list
+        document.getElementById("printChart").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

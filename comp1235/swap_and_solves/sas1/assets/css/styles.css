@@ -1,0 +1,97 @@
+/* Week 1: Review CSS Rules and Syntax */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #d9534f;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    font-size: 36px;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #428bca;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #5bc0de;
+}
+
+section {
+    margin: 20px;
+}
+
+#image-carousel {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#image-carousel img {
+    width: 100%;
+    /* Set width to 100% of the container */
+    max-width: 400px;
+    /* Set a maximum width to maintain proportions */
+    height: auto;
+    /* Maintain aspect ratio */
+    transition: transform 0.5s ease-in-out;
+}
+
+#popup-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+#popup {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#popup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#popup button {
+    background-color: #5bc0de;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

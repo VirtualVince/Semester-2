@@ -1,0 +1,49 @@
+<!--walkthrough6b.html
+Practice functions
+- Regular function
+- Anonymous const name = function
+- Arrow function () => {}
+
+All function types above can be used as Callback function:
+A function that is passed to another function call
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Walkthrough6b</title>
+    <script>
+        //Define an anonymous function that adds 2 numbers
+        const sum = function (num1, num2) {
+            let sumOfNums = num1 + num2;
+            return sumOfNums;
+        }
+
+        //Call the anonymous function
+        let result = sum(9, 5);
+        document.write(result);
+
+        //Define an arrow function that checks if a zip code is letter/number interchanged
+        //Zipcode: A3B5J9
+        const isZipCode = (zipcode) => {
+            const zipPattern = /([a-zA-Z]\d){3}/;
+            let zipMatches = zipPattern.test(zipcode);
+            document.write("<br>Is the zipcode valid?" + zipMatches);
+
+        }
+        //Call the arrow function with the zipcode example given above
+        isZipCode("A3B5J9");
+        isZipCode("A3B5JD");
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

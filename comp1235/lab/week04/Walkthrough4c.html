@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let Pattern_literal = new RegExp(/pop/,"i");
+    let match_string = "lollypop";
+    let result1 = Pattern_literal.test(match_string);
+    document.write("<br> was pattern matched?" + result1);
+    // (416)333-1232
+
+    let Pattern_phone =/\(\d{3})d{3}-\d{4}/
+    // let Pattern_phone = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?;
+    let match_phone = "(416)232-1223"
+    let match_phone2 = "416)232-6557"
+    let result2 = Pattern_phone.exec(match_phone);
+    let result3 = Pattern_phone.exec((match_phone2));
+    document.write("<br> the string that was matched by pattern was : " +result2)
+    document.write("<br> the string that was matched by pattern was : " +result3)
+
+    ///let Pattern_email = /^[a-zA-Z\/]*@[a-zA-Z]+\.com$/;
+    let Pattern_email = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
+
+    let match_email = "Farzineee@yahoo.com";
+    let result4 = Pattern_email.exec(match_email);
+    document.write(("<br> The string that was matched by pattern was : ") + result4);
+
+
+
+</script>
+</body>
+</html>

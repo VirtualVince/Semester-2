@@ -1,0 +1,68 @@
+<!--- walkthrough9b.html
+
+practicing closures
+_____________________________
+
+-where an inner function can access the variables of the outer function
+-closure is the name for the concept above
+-nested functions are the syntax of one function inside of another
+
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //define an outermost regular function called calcTax
+        function calcTax(price, countryName){
+            console.log("inside outermost function");
+
+            //define a middle-man anonymous function called calcFedTax
+            const calcFedTax = function(){
+                let countryCode = "US" // we have manually hoisted this variable for better style
+                console.log("Inside middle function");
+                console.log("The price of the product was : " + price);
+                if (countryName === "Canada"){
+                    countryCode = "CAD";
+                }
+
+
+
+                //define an innermost arrow function called the specialTaxDed
+                const specialTaxDed = () => {
+                    let tax_rate; //all we need for hoisting is just the declaration
+                                    //but optionally we can also have it defined as default
+                    console.log("Inside innermost function");
+                    console.log("The country code was : " + countryCode);
+                    if(countryCode === "CAD"){
+                        tax_rate = 0.13;
+                    }
+                    return tax_rate;
+                }
+                let tax_rate = specialTaxDed();
+
+                return tax_rate;
+            }
+
+            let tax_rate =calcFedTax();
+            let fullprice = price + (price * tax_rate);
+            //is tax_rate available in my outermost function -> not yet
+            console.log("The tax for your product will be: " + tax_rate); //in order for the outer function to access the variable of the
+            //inner functions, they must be returned all the way back
+
+            return fullprice;
+
+        }
+
+        console.log(calcTax(100,"Canada"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

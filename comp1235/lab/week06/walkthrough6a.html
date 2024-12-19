@@ -1,0 +1,33 @@
+<!-- practicing @media and @import rules
+this will help with assignment 1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Walkthrough6a</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+        /* Add media rule for when the screen is bigger than 850px vs. less than 400px */
+        @media only screen and (min-width: 850px){
+            p {
+                color: green;
+                font-family: Roboto Mono, sans-serif;
+            }
+        }
+        @media only screen and (max-width: 500px){
+            p {
+                color: blue;
+            }
+        }
+
+    </style>
+    <script></script>
+
+</head>
+<body>
+
+    <p>Welcome to Walkthrough6a</p>
+
+</body>
+</html>

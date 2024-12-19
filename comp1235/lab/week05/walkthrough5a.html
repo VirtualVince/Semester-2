@@ -1,0 +1,55 @@
+<!--  walkthrough5a.html
+Practice Spread Operator
+const keyword is used to define objects and arrays Always
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lab 5 - Walkthrough 5a</title>
+  <script>
+    //define two arrays
+    const grocery_list = ["apples","bananas","kale"];
+    const grocery_additions = ["tomato","lettuce"];
+
+    //define an object using the shorthand
+    //define a  human with a name, height and age of laura, 6 , 16
+    const Human = {
+      name: "Laura",
+      height: 6,
+      age: 16
+    }; //the class or prototype is: object class/prototype
+
+    //define an object using the object-oriented long syntax
+    //define a mammal that performs live_birth and has fur_colour of brown
+    //object() is the special constructor function
+    //constructor is:
+    //Name of the instantiated object is: Mammal (capital M)
+    const Mammal = new Object();
+    Mammal.live_birth = true;
+    Mammal.fur_color = "brown";
+
+    const total_groceries = [grocery_list, grocery_additions];
+    console.log(total_groceries);
+
+    //application 1 of spread operator:combine multiple arrays or objects into a 1D container
+    const total_groceries2 = [...grocery_list...grocery_additions];
+    console.log(total_groceries2)
+
+    const Organism ={...Human...Mammal};
+    console.log()
+
+    //application 2 of the spread operator :pass multiple arguments to a functions
+    const greeting = ["Hello","Beautiful","World"];
+    console.log(...greeting);
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Mr. Worldwide's Candy Emporium</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>Mr. Worldwide's Candy Emporium</h1>
+    </header>
+    <!-- Week 2: Variables Comparison, Logical, Conditional Operators Flex Box Layout (Chapter 7) -->
+    <nav>
+        <a href="#north-america">North America</a>
+        <a href="#south-america">South America</a>
+        <a href="#europe">Europe</a>
+        <a href="#asia">Asia</a>
+        <a href="#africa">Africa</a>
+        <a href="#australia">Australia</a>
+        <a href="#antarctica">Antarctica</a>
+    </nav>
+    <!-- Week 3: JavaScript Objects, Hoisting, and Destructuring Image Carousel -->
+    <section>
+        <div id="image-carousel">
+            <img src="./assets/img/pitbull.jpg" alt="Pitbull">
+            <img src="./assets/img/world.jpg" alt="World">
+            <img src="./assets/img/cadbury.jpg" alt="Cadbury Chocolate (Europe)">
+            <img src="./assets/img/mochi.jpg" alt="Mochi Balls (Asia)">
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac odio eu lacus luctus commodo. Nulla facilisi.
+        </p>
+    </section>
+    <!-- Week 4: JavaScript Objects, Hoisting, and Destructuring Pop-up Form -->
+    <div id="popup-overlay">
+        <div id="popup">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <button onclick="submitForm()">Submit</button>
+        </div>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac odio eu lacus luctus commodo. Nulla facilisi.</p>
+    <p>Phasellus tempus quam in nunc fringilla, vel convallis urna venenatis. Integer nec lacinia erat, vel dictum
+        metus.</p>
+
+    <script>
+        // Week 4: JavaScript Objects, Hoisting, and Destructuring Pop-up Form
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            alert(`Thank you, ${name}! We'll keep you updated on sweet deals at Mr. Worldwide's Candy Emporium.`);
+            closePopup();
+        }
+
+        function showPopup() {
+            document.getElementById('popup-overlay').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+
+        // Display the popup after 500 milliseconds
+        setTimeout(showPopup, 500);
+    </script>
+</body>
+
+</html>

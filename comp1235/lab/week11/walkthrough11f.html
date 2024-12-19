@@ -1,0 +1,39 @@
+<!-- walkthrough11f.html
+
+Practice with the fetch() function.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const imageElement = document.querySelector("#myImage");
+      const buttonElement = document.querySelector("button");
+
+      // The code below will be important for Assignment 4
+      buttonElement.addEventListener("click", () => {
+        fetch("https://dog.ceo/api/breeds/image/random")
+                .then((response) => {
+                  return response.json();
+                })
+                .catch((err) => {
+                  imageElement.src = err["message"];
+                })
+      })
+
+
+    })
+  </script>
+</head>
+<body>
+
+<img src="https://images.dog.ceo/breeds/redbone/n02090379_3899.jpg" id="myImage"></img>
+<button>Get a Dog image</button>
+
+</body>
+</html>

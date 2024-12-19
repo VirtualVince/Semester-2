@@ -1,0 +1,53 @@
+<!-- walkthrough9a.html
+
+topics:
+--------
+
+1- Constructor Functions
+2- Closures
+3- JSON or Regex
+
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // Constructor Functions
+        // Theory: a constructor ___initializes___ a new ___object____ so that it is
+        // available in the __main__(this entire file, not the entire project)__ scope
+        // we have constructors for both prototypes and classes, but we have so far
+        // learned prototypes
+
+        // name of the prototype should be Animal
+        // therefore the name of the constructor should be: animal
+
+        function Animal(p_sharp_claws){
+          //animal should have sharp_claws property
+            this.sharp_claws = p_sharp_claws;
+            //animal should have an id property that will be hard coded 1000
+            this.id = 1000;
+
+            //define an anon method for this prototype called eat
+            this.eat = function (){
+                console.log("the jaguar is eating");
+            }
+            //automatically returns the new instantiated object
+
+        }
+
+        //calling the constructor function with an argument
+        const jaguar = new Animal(true);
+        console.log(jaguar);
+        jaguar.eat();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

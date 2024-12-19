@@ -1,0 +1,38 @@
+<!--
+Practice JSON objects and JSON strings
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Walkthrough6c</title>
+
+    <script>
+        // Define a JSON string
+        // To be passed from your server to the Web API over the network (or vice versa)
+        // Passed within HTTP responses
+
+        const weatherJSONString = '{"monday": "cloudy", "tuesday": "sunny", "wed": "rainy:}';
+
+        // Convert it to a JSON object
+
+        const weatherJSONObj = JSON.parse(weatherJSONString);
+
+        //This is a static method
+
+        // Print out Tuesday's weather - OK that it is giving a warning for tuesday because
+        // line 18 that parses the JSON has not executed at the time of displaying this error in webstorm
+        console.log("Tuesday the weather is going to be" + weatherJSONObj.tuesday);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

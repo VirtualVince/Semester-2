@@ -1,0 +1,37 @@
+<!--walkthrough5b.html
+Practice String Functions (Methods)
+Method Syntax: stringObject.methodname()
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab 5 - Walkthrough 5b </title>
+    <script>
+        let username = "peter.griffin";
+        let username2 = "lois.lane";
+
+        //cut up username to only contain the first 5 characters
+        //substring parameters:
+        //first param: inclusive value
+        //second param: exclusive value
+        let firstname = username.substring(0, 5);
+        console.log(firstname)
+
+        //get the index of the dot, to determine where the last name starts
+
+        let lastName = username.substring(username.indexOf(".")+ 1 );
+        console.log(lastName);
+
+        //first letter of the name
+        let firstChar = username2.charAt(0);
+        console.log(firstChar);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

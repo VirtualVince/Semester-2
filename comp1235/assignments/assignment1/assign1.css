@@ -1,0 +1,139 @@
+/*
+Assignment 1, Natalie Ramcharritar + Vincente Sequeira
+*/
+
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+/* Sans-serif font */
+@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap');
+/* Serif font */
+
+header,
+footer {
+    font-family: 'Bangers', sans-serif;
+}
+
+main {
+    font-family: 'Ceviche One', serif;
+}
+
+/* centering */
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: pink;
+    color: blue;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 2%;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer ul li:last-child {
+    margin-right: 0;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* nav bar + text flare */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100px;
+    padding: 0 20px;
+
+    #home {}
+
+    margin-right: auto;
+}
+
+#nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#nav-links li {
+    margin-left: 20px;
+}
+
+#nav-links a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#nav-links a:hover {
+    text-decoration: underline;
+}
+
+/*grid stuff*/
+#course-grid {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px auto;
+    gap: 15px 10px;
+}
+
+#page_title {
+    grid-column: 1 / span 3;
+}
+
+body {
+    background-color: grey;
+    color: blue;
+}
+
+.course_item {
+    background-color: white;
+}
+
+/*media stuff*/
+@media screen and (max-width: 640px) {
+    #course-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #course-grid {
+        grid-template-columns: 1fr;
+    }
+}

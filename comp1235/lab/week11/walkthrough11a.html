@@ -1,0 +1,116 @@
+<!--walkthrough11a.html
+
+practice creating promises
+--------------------------------
+the concepts below will be on the final exam, but not much on the assignment
+
+who returns a promise?: not the web server but the web API (weather, cat pictures, IMBD data, ...).
+
+function that returns a promise: fetch()
+
+who receives the promise?: web server (web developer programs this)
+
+what are the functions that a promise uses (Web API uses) to declare whether the
+data was retrieved successfully or unsuccessfully: resolve() reject()
+
+what are the methods that can be called on a promise (web Server uses) to declare whether the
+data was retrieved successfully or unsuccessfully: then(), catch()
+
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //this code is usually written for the web API, so we are pretending we are API developers
+        async function promiseReturner1(){
+            //automatically resolve a successful piece of data for the promise
+            return "This is actually a Promise Object. And we can even run the then() and catch() methods on it.";
+        }
+
+        //this code is usually written for web server (by the web developer). usually in a different file from the
+        const p1 = promiseReturner1();
+
+        /*
+        console.log(p1);
+
+        p1.then((strVal) => {
+            console.log("The promise returned the following: " + strVal);
+        }).catch(() => {
+            console.log("there was an error with the data");
+        })
+         */
+
+        //promiseReturner2 shows the asynchronocity of js as sometimes it results in pending, sometimes in fulfill
+        //and there is no guarantee that we will be able to use.then() to successfully output the data
+        //i.e. .catch() may be executed instead, if the data did not arrive in time
+        //async function is usually called using an await keyword (usually we se it as = await fetch())
+
+        function promiseReturner2(){
+            // explicitly resolve a successful piece of data for the promise
+            return Promise.resolve("this is actually a promise object. and we can even run then() and catch()")
+        }
+
+        //we would usually use fetch() here instead. And this code below again be in a different file
+
+        /*
+     console.log(p2);
+
+     p2.then(() => {
+         console.log("The promise returned the following: " + strVal);
+     }).catch(() => {
+         console.log("there was an error with the data");
+     })
+      */
+
+        //pretending we are the web API developers
+        async function promiseReturner3(path) {
+            const p3 = new Promise((resolve, reject) => {
+                if (path === "comp1235API.com") {
+                    resolve(80)
+                } else {
+                    reject(new Error("the path was not correct"));
+                }
+            });
+
+            //not a good solution, because this code is usually in a different file
+            p3.then((classAverage) => {
+                console.log("the promise returned with the following: " + classAverage);
+            }).catch((error) => {
+                console.log("there was an error with the data " + error);
+                });
+        }
+
+        //pretending we are the web server developer
+        //const p3 = promiseReturner3("comp1235API.com");
+        async function promiseReturner4(path){
+            const p4 = new Promise((resolve, reject) => {
+                if (path === "comp1235API.com"){
+                    resolve(80);
+                } else {
+                    reject(new Error("the path was not correct"));
+                }
+            });
+            return p4;
+        }
+
+        const p4 = promiseReturner4("comp1235API.com");
+
+        console.log(p4);
+        //not a good solution, because this code is usually in a different file
+        p4.then((classAverage) => {
+            console.log("the promise returned the following: " + classAverage);
+            }).catch((error) => {
+                console.log("there was an error with the data " + error);
+            });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

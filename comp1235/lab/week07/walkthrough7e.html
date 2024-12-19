@@ -1,0 +1,44 @@
+<!--walkthrough7de.html
+practice with nested functions ie. the concept of a closure
+--------
+-return something from the inner function
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //define an anonymous function inner: calculateTax()
+        //define a regular function outer calculateCost() function
+        //Outer Function
+        function calculateCost(basePrice){
+            //THIS IS NOT A CALLBACK FUNCTION
+            //THIS IS NOT A RECURSIVE
+            //inner function (the nested function)
+            const calculateTax = function  (){
+                console.log("welcome to walkthrough7c");
+                return basePrice;
+            }
+
+            return calculateTax;
+        }
+        //this function returns void (undefined)
+
+        //call the function calculateCost
+        //returnVal will contain the definition of the function calculateTax
+        let returnVal = calculateCost(19.99);
+        console.log("the calculateCost function returns: " + returnVal);
+        //return value of the returnVal() function is void/undefined
+        console.log("if we call the variable returned as a function:" + returnVal());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

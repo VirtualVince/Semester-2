@@ -1,0 +1,27 @@
+<!-- walkthrough9d.html
+Practice Regular Expressions
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    //optional homework: write a regular expression for password
+    // const passwordPattern = new RegExp("//")
+    // const passwordPattern = /[[A-Za-z]\d[$!"%&()#]]{8,}]/;
+    const passwordPattern = /[A-Za-z\d$!"%&()#]{8,}/;
+    let examplePass = "D9xxk$q3!" //passwords should at least be at least 9 characters long
+    let examplePass2 = "j9xxk$q#!" //passwords should at least be at least 9 characters long
+    console.log(passwordPattern.test(examplePass));
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

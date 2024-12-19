@@ -1,0 +1,36 @@
+namespace week04
+{
+    Internal class Divid
+    {
+
+        static void Main(string[] args)
+        {
+            string inputA;
+            string inputB;
+            Console.writeLine("please enter the first number");
+            inputA = Console. ReadLine();
+
+            Console.writeLine("please enter the second input");
+            inputB = Console.Readline();
+
+            double a;
+            double b;
+
+            a = double.Parse(inputA);
+            b = double.Parse(inputB);
+
+            while (b ==0)
+            {   //the input 0 for b is not valid because a / 0 is not defined in math
+                Console.WriteLine("the second number cannot be zero");
+                Console.WriteLine("Re-ente a non-zero number");
+                inputB = Console.ReadLine();
+                b= double.Parse(inputB);
+            }
+            double result;
+            result = a / b;
+
+            Console.Writeline($"the result of {a} / {b} is: {result}");
+            Console.Readkey();
+        }
+    }        
+}   
